@@ -5,8 +5,8 @@
 
 <h2 style="color: #667EEA">Live demo</h2>
 
-<a herf="https://manthanakabri.com">
-<img src="https://img.shields.io/badge/DEMO-CLICK%20HERE-blue?style=for-the-badge&logo=appveyor"  alt="Live Demo" width="200">
+<a href="https://manthanakabri.com">
+    <img src="https://img.shields.io/badge/DEMO-CLICK%20HERE-blue?style=for-the-badge&logo=appveyor" alt="Live Demo" width="200">
 </a>
 
 <h2 style="color: #667EEA">Technologies Used</h2>
