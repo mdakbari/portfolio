@@ -44,6 +44,29 @@ try {
                     case 'portfolio':
                         include __DIR__ . '/portfolio.php';
                         break;
+                         case 'resume':
+                        $file = __DIR__ . '/assets/Manthan Resume.pdf';
+                
+                        header('Content-Type: application/pdf');
+                        header('Content-Disposition: inline; filename="Manthan Resume.pdf"');
+                        header('Content-Length: ' . filesize($file));
+                
+                        // Output the file
+                        readfile($file);
+                        exit;
+                        break;
+                    case 'cv':
+                        $file = __DIR__ . '/assets/Manthan Resume.pdf';
+                
+                        header('Content-Type: application/pdf');
+                        header('Content-Disposition: attachment; filename="Manthan Resume.pdf"');
+                        header('Content-Length: ' . filesize($file));
+                
+                        // Output the file
+                        readfile($file);
+                        exit;
+                        break;
+
                     case 'projects':
                         include __DIR__ . '/projects.php';
                         break;

@@ -17,7 +17,7 @@ try{
 }
 
 $conn = new mysqli($host, $username, $password, $dbname);
-$sql = "SELECT * FROM projects";
+$sql = "SELECT * FROM pro   jects";
 $stmt = $pdo->query($sql);
 $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

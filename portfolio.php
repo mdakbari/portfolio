@@ -10,9 +10,9 @@ include 'db.php';
     <meta name="description" content="">
     <meta name="keywords" content="">
     <title>Md</title>
-    <!-- Favicon -->
-    <link href="assets/images/favicon.png" rel="shortcut icon">
-    <!-- CSS -->
+    <!-- Favicon -->   
+      <link href="assets/images/md_fav.png" rel="shortcut icon">
+<!-- CSS -->
     <link href="assets/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="assets/plugins/magnific-popup/magnific-popup.min.css" rel="stylesheet">
     <link href="assets/plugins/swiper/swiper-bundle.min.css" rel="stylesheet">
@@ -85,6 +85,12 @@ include 'db.php';
                         width: 100%;
                         height: 295px;
                     }
+                    @media screen and (max-width: 768px) {
+                        .portfolio-box .portfolio-img img {
+                            height: 180px;
+                        }
+                        
+                    }
                 </style>
            <div class="swiper portfolio-slider mt-4 mt-lg-5">
             <div class="swiper-wrapper">
@@ -116,7 +122,9 @@ include 'db.php';
 </main>
     <!-- Footer -->
     <div class="py-4 py-lg-5 text-center">
-        <p>&copy; 2023 Mdakbari, All Rights Reserved.</p>
+        <a href="http://manthanakbari.com">
+            <p>&copy; 2024 Manthan Akbari, All Rights Reserved.</p>
+        </a>
     </div>
     <!-- end Footer -->
 

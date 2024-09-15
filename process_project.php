@@ -1,10 +1,5 @@
 <?php
-include 'db.php';
-
-if (!isset($_SESSION['user_id'])) {
-    header('Location: /');
-    exit;
-}
+include 'db.php'; // Include database connection
 
 if (isset($_POST['submit'])) {
     $title = $_POST['title'];
@@ -13,11 +8,14 @@ if (isset($_POST['submit'])) {
     $backend_technologies = $_POST['backend_technologies'];
     $project_type = $_POST['project_type'];
     $website_url = $_POST['website_url'];
+    $order = $_POST['order'];
 
+    // Handle the main image upload
     $main_image = 'uploads/' . basename($_FILES['main_image']['name']);
     move_uploaded_file($_FILES['main_image']['tmp_name'], $main_image);
 
     try {
+        // Insert project data into the database
 
         if (isset($_POST['backend_technologies_checkbox']) && $_POST['backend_technologies_checkbox'] == 'yes') {
             $backend_technologies = 'No backend';
@@ -25,8 +23,8 @@ if (isset($_POST['submit'])) {
             $backend_technologies = $_POST['backend_technologies'];
         }
 
-        $sql = "INSERT INTO projects (title, description, main_image, frontend_technologies, backend_technologies, project_type, website_url) 
-                VALUES (:title, :description, :main_image, :frontend_technologies, :backend_technologies, :project_type, :website_url)";
+        $sql = "INSERT INTO projects (title, description, main_image, frontend_technologies, backend_technologies, project_type, website_url, display_order) 
+                VALUES (:title, :description, :main_image, :frontend_technologies, :backend_technologies, :project_type, :website_url, :order)";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
             ':title' => $title,
@@ -35,7 +33,8 @@ if (isset($_POST['submit'])) {
             ':frontend_technologies' => $frontend_technologies,
             ':backend_technologies' => $backend_technologies,
             ':project_type' => $project_type,
-            ':website_url' => $website_url
+            ':website_url' => $website_url,
+            ':display_order' => $order
         ]);
 
         $project_id = $pdo->lastInsertId(); 
